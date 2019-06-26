@@ -47,7 +47,7 @@ let main () =
     ] ignore usage in
     (* pr (!height); *)
     (* findFolder (JustFile(["me"])); *)
-    createFolderStructure ("./" ^ path) [JustFolder(!projectName,[JustFolder("thisOtherMine", [Empty]); JustFolder("nextToo", [Empty]); JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])])];
+    createFolderStructure (!path) [JustFolder(!projectName,[JustFolder("thisOtherMine", [Empty]); JustFolder("nextToo", [Empty]); JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])])];
     (* createFiles "./foo" ["mmmmm.txt"] *)
   end
   (* [JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])]; *)
