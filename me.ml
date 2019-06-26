@@ -2,9 +2,10 @@ type 'a folder = Empty | JustFolder of ('a * 'a folder list) | JustFile of ('a l
 
 
 
-let usage = "[Usage]:\t./step -projectName value"
+let usage = "[Usage]:\t./step -ProjectName value"
 
 let projectName = ref ""
+let path = ref ""
 
 let rec createFiles path = function
   | [] -> ()
@@ -41,11 +42,12 @@ let pr h =
 let main () =
   begin
     let aa = Arg.parse Arg.[
-      ("-projectName", Set_string projectName, "<projectName> set Name")
+      ("-ProjectName", Set_string projectName, "<ProjectName> set Name");
+      ("-Path", Set_string path, "<Path> set Path")
     ] ignore usage in
     (* pr (!height); *)
     (* findFolder (JustFile(["me"])); *)
-    createFolderStructure "./foo" [JustFolder(!projectName,[JustFolder("thisOtherMine", [Empty]); JustFolder("nextToo", [Empty]); JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])])];
+    createFolderStructure ("./" ^ path) [JustFolder(!projectName,[JustFolder("thisOtherMine", [Empty]); JustFolder("nextToo", [Empty]); JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])])];
     (* createFiles "./foo" ["mmmmm.txt"] *)
   end
   (* [JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])]; *)

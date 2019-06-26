@@ -7,7 +7,7 @@
 ### Sample command: ocamlc unix.cma me.ml -o me -> links the Unix modulo
 ### Sample execution: ./me -projectName "MainRoot"
 
-### It will then create a folder structure provided by some type structure such as the following:
+### It will then create a folder structure provided by some type structure such as the following (For testing purposes, use the foo folder in this current version for the -Path, This current version does not check if either of the parameters were provided -> impemented in later versions):
 
 ```ocaml
 [JustFolder(!projectName,[JustFolder("thisOtherMine", [Empty]); JustFolder("nextToo", [Empty]); JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])])]
