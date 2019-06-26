@@ -9,7 +9,9 @@
 
 ### It will then create a folder structure provided by some type structure such as the following:
 
-### 1) [JustFolder(!projectName,[JustFolder("thisOtherMine", [Empty]); JustFolder("nextToo", [Empty]); JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])])]
+```ocaml
+[JustFolder(!projectName,[JustFolder("thisOtherMine", [Empty]); JustFolder("nextToo", [Empty]); JustFile(["me133.txt"; "me2.txt"; "me3.txt"; "me4.txt"])])]
+```
 
 ### Where these types are defined as: 
 ```ocaml
